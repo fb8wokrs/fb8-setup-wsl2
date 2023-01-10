@@ -1,0 +1,33 @@
+#+TITLE: WSL2 のセットアップ
+#+AUTHOR: Daisuke Arai
+#+DATE: 2023-01-04
+#+INCLUDE: "common.setup"
+#+PROPERTY: header-args :eval no-export
+
+* はじめに
+
+WSL2 のセットアップを行います。セットアップを行うことで以下のアプリケーションのインストールと各種設定が行われます。
+
+- scoop
+- gsudo
+- Git
+- Windows Terminal
+- Microsoft-Windows-Subsystem-Linux
+- VirtualMachinePlatform
+- WSL2 カーネルアップデート
+- Ubuntu 20.04
+
+Ubuntu には以下のアプリケーションをインストールします。
+
+- git
+- make
+
+* セットアップ
+
+1. 本ソースコードをダウンロードして展開します。
+1. =setup/setup.bat= をダブルクリックして実行します。
+1. 「Windows によって PC が保護されました」と表示されますので「詳細情報」をクリックします。
+1. 「実行」ボタンを押します。
+
+セットアップ中はプログラムの表示する手順に従って進めて下さい。
+途中再起動が必要な場合があります。再起動した場合はもう一度セットアップを実行してください。

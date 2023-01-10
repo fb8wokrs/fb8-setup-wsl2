@@ -1,0 +1,96 @@
+#content { background: #f6f6f6 }
+
+/* 印刷用スタイル */
+@media print {
+    /* A4 縦 */
+    @page {
+        size: A4 portrait;
+	margin: 12.7mm 9.7mm;
+    }
+
+    /* 印刷時はソースコードを枠内で強制改行 */
+    pre.src {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap;
+	white-space: -pre-wrap;
+	word-wrap: break-word;
+    }
+}
+
+/* コードブロック等の諧調を反転する */
+
+.org-src-container {
+  position: relative;
+}
+
+.org-src-container > pre.src {
+    background: #fff !important;
+    filter: hue-rotate(180deg) brightness(80%) invert(100%);
+    padding: 1.5em 1em 1em 1em;
+    overflow-x: auto;
+}
+
+.org-src-container > pre.src:before {
+  display: inline;
+  position: absolute;
+  color: #888;
+  background-color: white;
+  top: 0px;
+  right: 0px;
+  left: unset;
+  padding: 0px 8px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 80%;
+}
+
+/* コードブロックの言語名ラベル */
+.org-src-container > pre.src:before { filter: none !important; color: #eee !important; background: #444 !important; }
+
+/* 各種言語名 */
+.org-src-container > pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+.org-src-container > pre.src-elisp:before { content: 'Emacs Lisp'; }
+.org-src-container > pre.src-org:before { content: 'Org'; }
+.org-src-container > pre.src-sh:before { content: 'Shell'; }
+.org-src-container > pre.src-bat:before { content: 'BAT'; }
+.org-src-container > pre.src-basic:before { content: 'BASIC'; }
+.org-src-container > pre.src-python:before { content: 'Python'; }
+.org-src-container > pre.src-makefile:before { content: 'Makefile'; }
+.org-src-container > pre.src-markdown:before { content: 'Markdown'; }
+.org-src-container > pre.src-C:before { content: 'C'; }
+.org-src-container > pre.src-c:before { content: 'C'; }
+.org-src-container > pre.src-cpp:before { content: 'C++'; }
+.org-src-container > pre.src-java:before { content: 'Java'; }
+.org-src-container > pre.src-js:before { content: 'Javascript'; }
+.org-src-container > pre.src-swift:before { content: 'Swift'; }
+.org-src-container > pre.src-html:before { content: 'HTML'; }
+.org-src-container > pre.src-xml:before { content: 'XML'; }
+.org-src-container > pre.src-IDL:before { content: 'IDL'; }
+
+/* GNU Screen */
+.org-src-container > pre.src-screen { background: #cef !important; }
+.org-src-container > pre.src-screen:before { content: 'Screen'; }
+
+/* Shell session */
+.org-src-container > pre.src-shell-session { background: #cef !important; }
+.org-src-container > pre.src-shell-session:before { content: 'Shell session'; }
+
+/* DOS Session */
+.org-src-container > pre.src-dos-session { background: #cef !important; }
+.org-src-container > pre.src-dos-session:before { content: 'Dos session'; }
+
+pre {
+  border-radius: 4px;
+}
+pre.src {
+  font-family: monospace;
+}
+
+.coderef-off {
+  background: pink;
+}
+
+.codeblock, pre.src, #content .literal-block {
+    //overflow: visible; // readtheorg を上書き
+}

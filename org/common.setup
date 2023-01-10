@@ -1,0 +1,14 @@
+#+SETUPFILE: ./themes/current/theme.setup
+#+ODT_STYLES_FILE: "org-odt-styles.xml"
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/org-common.css"/>
+#+OPTIONS: ^:{}
+
+# #+OPTIONS: \n:t
+
+#+LATEX_CLASS_OPTIONS: [a4j]
+#+BEGIN_EXPORT latex
+\newenvironment{note}{\begin{center}\begin{minipage}{8cm}\hrule\vspace{0.2cm}
+     \textbf{Note:}}{\vspace{0.3cm}\hrule\end{minipage}\end{center}}
+\newenvironment{warning}{\begin{center}\begin{minipage}{8cm}\hrule\vspace{0.2cm}
+     \textbf{Note:}}{\vspace{0.3cm}\hrule\end{minipage}\end{center}}
+#+END_EXPORT
