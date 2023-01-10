@@ -1,9 +1,0 @@
-#+TITLE: WSL2 のセットアップ
-#+AUTHOR: Daisuke Arai
-#+DATE: 2023-01-10
-#+INCLUDE: "common.setup"
-#+PROPERTY: header-args :eval no-export
-
-目次
-
-- [[file:setup.org][WSL2 のセットアップ]]

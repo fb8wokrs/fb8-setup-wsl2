@@ -1,9 +1,0 @@
-build/
-htmlize/.gitignore
-htmlize/NEWS
-htmlize/README.md
-htmlize/htmlize.el.html
-themes/current
-themes/org-html-themes/.gitignore
-themes/org-html-themes/docs/
-themes/org-html-themes/tests/
