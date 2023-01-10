@@ -14,8 +14,11 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 
 ### Install scoop ###
 
-{ irm get.scoop.sh | iex }
-$env:PATH="$env:PATH;$env:USERPROFILE\scoop\shims"
+if ((Get-Command "scoop" -ErrorAction SilentlyContinue) -eq $null) {
+    { irm get.scoop.sh | iex }
+    $env:PATH="$env:PATH;$env:USERPROFILE\scoop\shims"
+}
+
 scoop bucket add extras
 scoop install git
 scoop update
@@ -58,7 +61,8 @@ wsl.exe --distribution "$distribution" --set-default-version 2
 ### Map WSL volume ###
 
 Write-Host "U ドライブに $distribution を割り当てます。"
-wsl --distribution "$distribution" cmd.exe /c "net use U: '\\wsl.localhost\$distribution'"
+wsl --distribution "$distribution" true
+cmd.exe /c "net use U: ""\\wsl.localhost\$distribution"""
 
 ### Create shortcuts ###
 
@@ -70,6 +74,6 @@ $Shortcut.Save()
 
 ### Setup ubuntu ###
 
-Write-Host "Ubuntu の起動が完了しました。"
+Write-Host "引き続き Ubuntu のセットアップを行います。"
 
 wsl --distribution "$distribution" bash "`$(wslpath '$PSScriptRoot\setup.sh')"

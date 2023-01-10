@@ -22,12 +22,19 @@ Ubuntu には以下のアプリケーションをインストールします。
 - git
 - make
 
-* セットアップ
+* セットアップ手順
 
-1. 本ソースコードをダウンロードして展開します。
-1. =setup/setup.bat= をダブルクリックして実行します。
-1. 「Windows によって PC が保護されました」と表示されますので「詳細情報」をクリックします。
-1. 「実行」ボタンを押します。
+Powershell で以下のコマンドを実行してセットアップを行って下さい。
+
+#+BEGIN_SRC powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://github.com/fb8wokrs/fb8-setup-wsl2/archive/refs/heads/main.zip -OutFile fb8-setup-wsl2-main.zip; Expand-Archive .\fb8-setup-wsl2-main.zip . -Force; fb8-setup-wsl2-main\setup\setup.bat
+#+END_SRC
 
 セットアップ中はプログラムの表示する手順に従って進めて下さい。
 途中再起動が必要な場合があります。再起動した場合はもう一度セットアップを実行してください。
+
+1. スタートメニューから「Windows Powershell」を起動します (Win+X I)。
+1. Ctrl+C および Ctrl+V で上記のコマンドを貼り付けます。
+1. Enter キーを押します。
+1. 「Windows によって PC が保護されました」と表示されますので「詳細情報」をクリックします。
+1. 「実行」ボタンを押します。
