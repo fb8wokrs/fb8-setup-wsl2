@@ -9,7 +9,7 @@ WSL2 のセットアップと基本的な設定を行います。本プロジェ
 Powershell で以下のセットアップ用コマンドを実行してセットアップを行って下さい。
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://github.com/fb8wokrs/fb8-setup-wsl2/archive/refs/heads/main.zip -OutFile fb8-setup-wsl2-main.zip; Expand-Archive .\fb8-setup-wsl2-main.zip . -Force; fb8-setup-wsl2-main\setup\setup.bat
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://github.com/fb8wokrs/fb8-setup-wsl2/archive/refs/heads/main.zip -OutFile fb8-setup-wsl2-main.zip; Expand-Archive .\fb8-setup-wsl2-main.zip . -Force; fb8-setup-wsl2-main\setup.bat
 ```
 
 セットアップ中はプログラムの表示する手順に従って進めて下さい。
