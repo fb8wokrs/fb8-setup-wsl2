@@ -22,7 +22,7 @@ echo "/etc/wsl.conf を用意します。"
 template="$(cat <<'EOF'
 [automount]
 enabled = true
-root = /mnt
+root = /mnt/
 options = "metadata,umask=22,fmask=11"
 EOF
 )"

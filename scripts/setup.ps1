@@ -1,4 +1,4 @@
-﻿# -*- encoding: utf-8-with-signature-unix -*-
+﻿# -*- coding: utf-8-with-signature-unix -*-
 
 # Setup WSL2
 
