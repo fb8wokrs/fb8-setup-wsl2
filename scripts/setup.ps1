@@ -15,7 +15,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 ### Install scoop ###
 
 if ((Get-Command "scoop" -ErrorAction SilentlyContinue) -eq $null) {
-    { irm get.scoop.sh | iex }
+    irm get.scoop.sh | iex
     $env:PATH="$env:PATH;$env:USERPROFILE\scoop\shims"
 }
 
@@ -50,6 +50,9 @@ Write-Host "$distribution をインストールしています。この操作に
 Write-Host "Ubuntu のインストールが完了すると自動的に Windows ターミナルが起動します。"
 Write-Host "「Enter new UNIX username:」とユーザー名(半角のアルファベットで空白や記号が無いこと)を入力します。ご自身の Windows のユーザー名と同じで良いでしょう。"
 Write-Host "「New password:」および「Retype new password:」と聞かれたらパスワードを２回入力してください。こちらも Windows のパスワードと同じでも良いでしょう。"
+Write-Host ""
+Write-Host "*重要* パスワードを入力したら $ の後に exit と入力して下さい。"
+Write-Host ""
 Read-Host "Enter キーを押すと続行します"
 
 wsl.exe --install --distribution "$distribution"
@@ -67,8 +70,9 @@ cmd.exe /c "net use U: ""\\wsl.localhost\$distribution"""
 ### Create shortcuts ###
 
 Write-Host "デスクトップに HOME ショートカットを作成します。"
+$desktopPath = [System.Environment]::GetFolderPath("Desktop")
 $WshShell = New-Object -comObject WScript.Shell
-$Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\HOME.lnk")
+$Shortcut = $WshShell.CreateShortcut($desktopPath + "\HOME.lnk")
 $Shortcut.TargetPath = "\\wsl.localhost\$distribution\home\$env:USERNAME"
 $Shortcut.Save()
 
