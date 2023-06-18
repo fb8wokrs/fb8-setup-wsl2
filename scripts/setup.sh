@@ -2,7 +2,8 @@
 
 # Setup script for Ubuntu on WSL2
 
-SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 cd "$SCRIPT_DIR"
 
 echo "Ubuntu の基本セットアップを開始します。"
